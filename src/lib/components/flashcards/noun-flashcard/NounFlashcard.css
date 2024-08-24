@@ -1,0 +1,261 @@
+:root
+{
+    font-size: 1.2rem;
+    font-weight: 100;
+    --rounded-corner-radius: 15px;
+    --card-content-height: 55%;
+    --card-border-color: rgba(255,255,255,0.7)
+}
+
+/*General styles*/
+button, input[type="submit"], input[type="reset"] {
+    background: none;
+    color: darkgray;
+    border: none;
+    padding: 15px;
+    font: inherit;
+}
+
+button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
+    color: white;
+    cursor: pointer;
+}
+
+#background-element
+{
+    position: absolute;
+    left: 0 ;
+    bottom: -500px;
+    border-radius: 50%;
+    height: 100vh;
+    width: 50vw;
+    background-color: red;
+    z-index: -1;
+}
+
+.feedback-indicator
+{
+    position: absolute;
+    min-width: calc(40vw);
+    max-width: calc(40vw);
+    height: calc(800px);
+    max-height: calc(90vh);
+    border-radius: var(--rounded-corner-radius);
+    filter: blur(10px);
+    opacity: 35%;
+
+}
+
+.card
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 40vw;
+    max-width: 40vw;
+    height: 800px;
+    max-height: 90vh;
+    border-radius: var(--rounded-corner-radius);
+    border: 1px solid var( --card-border-color);
+    box-shadow: 5px 5px 15px black ;
+    background: linear-gradient(40deg, rgba(0,0,0,0.28) 0%, rgba(166,164,164,0.26) 45%, rgba(255,255,255,0.34) 100%);
+    -webkit-backdrop-filter: blur(40px);
+    resize: horizontal;
+    z-index: 0;
+
+}
+
+/*Header styles*/
+.card-header
+{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    position:absolute;
+    top: 0;
+    height: 8%;
+    width: 100%;
+    border-top-left-radius: var(--rounded-corner-radius);
+    border-top-right-radius: var(--rounded-corner-radius);
+    z-index: 1;
+}
+
+.card-header button
+{
+    margin: 0 2%;
+}
+
+
+/*Content styles*/
+.card-content
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: var(--card-content-height);
+}
+
+.question, .question img
+{
+    border-top-right-radius: var(--rounded-corner-radius);
+    border-top-left-radius: var(--rounded-corner-radius);
+    width: 100%;
+    height: 100%;
+}
+
+.content-frost
+{
+    border-top-right-radius: var(--rounded-corner-radius);
+    border-top-left-radius: var(--rounded-corner-radius);
+    width: 100%;
+    height: var(--card-content-height);
+    position: absolute;
+    top: 0;
+    background: linear-gradient(40deg, rgba(0,0,0,0.28) 0%, rgba(166,164,164,0.26) 45%, rgba(255,255,255,0.34) 100%);
+
+}
+
+/*CTA-action*/
+.card-actions
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - var(--card-content-height));
+    border-bottom-left-radius: var(--rounded-corner-radius);
+    border-bottom-right-radius: var(--rounded-corner-radius);
+    margin-top: 3%;
+}
+
+.hint
+{
+    text-align:center;
+    position: relative;
+}
+
+.hint-tooltip
+{
+    display: none;
+    background-color: rgba(0,0,0,0.7);
+    width: 150px;
+    height: 80px;
+}
+
+#hint-tooltip-button span
+{
+    font-size: 2rem;
+}
+
+.cta
+{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+
+}
+
+.answer-field
+{
+    padding: 2%;
+    font-size: 1.5rem;
+    border-radius: var(--rounded-corner-radius);
+    background-color: transparent;
+    border: 1px solid var(--card-border-color);
+}
+
+.cta-buttons
+{
+    display:flex;
+    justify-content: space-between;
+    margin-top: 1.5%;
+    width: 65%;
+}
+
+#answer,#skip
+{
+    text-align: center;
+    width: 6rem;
+    height: 2rem;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    transition: scale .6s;
+    color: rgb(165, 165, 165);
+
+}
+
+#answer:hover,#skip:hover
+{
+    color: white;
+
+}
+
+#answer:active,#skip:active
+{
+    scale: 102% 102% 0.95;
+}
+
+#answer
+{
+    background: linear-gradient(40deg, rgba(0,255,0,0.1) 0%, rgba(0,255,0,0.2) 45%, rgba(0,255,0,0.3) 100%);
+}
+
+#answer:hover
+{
+    background: linear-gradient(40deg, rgba(0,255,0,0.3) 0%, rgba(0,255,0,0.4) 45%, rgba(0,255,0,0.5) 100%);
+}
+
+#skip
+{
+    background: linear-gradient(40deg, rgba(255,0,0,0.1) 0%, rgba(255,0,0,0.2) 45%, rgba(255,0,0,0.3) 100%);
+}
+
+#skip:hover
+{
+    background: linear-gradient(40deg, rgba(255,0,0,0.3) 0%, rgba(255,0,0,0.4) 45%, rgba(255,0,0,0.5) 100%);
+}
+
+/*Footer styles*/
+
+.card-feedback
+{
+    position:absolute;
+    bottom: 0;
+    width:100%;
+    height: 15%;
+    visibility: hidden;
+    border-bottom-left-radius: var(--rounded-corner-radius);
+    border-bottom-right-radius: var(--rounded-corner-radius);
+}
+
+.feedback-good {
+    background: linear-gradient(40deg, rgba(0, 255, 0, 0.3) 0%, rgba(0, 255, 0, 0.4) 45%, rgba(0, 255, 0, 0.5) 100%);
+    box-shadow: 0 0 40px rgba(0, 255, 0, 0.5);
+    visibility: visible;
+}
+
+.feedback-bad
+{
+    background: linear-gradient(40deg, rgba(255,0,0,0.3) 0%, rgba(255,0,0,0.4) 45%, rgba(255,0,0,0.5) 100%);
+    box-shadow: 0 0 40px rgba(255,0,0,0.5);
+    visibility: visible;
+}
+
+/*functional styling*/
+.visible
+{
+    visibility: visible;
+}
+
+.hidden
+{
+    visibility: hidden;
+}
+
