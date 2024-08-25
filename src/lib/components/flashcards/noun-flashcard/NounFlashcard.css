@@ -36,10 +36,8 @@ button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
 .feedback-indicator
 {
     position: absolute;
-    min-width: calc(40vw);
-    max-width: calc(40vw);
     height: calc(800px);
-    max-height: calc(90vh);
+    width: 800px;
     border-radius: var(--rounded-corner-radius);
     filter: blur(10px);
     opacity: 35%;
@@ -52,16 +50,13 @@ button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-width: 40vw;
-    max-width: 40vw;
+    width: 800px;
     height: 800px;
-    max-height: 90vh;
     border-radius: var(--rounded-corner-radius);
-    border: 1px solid var( --card-border-color);
+    border: 0px solid var( --card-border-color);
     box-shadow: 5px 5px 15px black ;
     background: linear-gradient(40deg, rgba(0,0,0,0.28) 0%, rgba(166,164,164,0.26) 45%, rgba(255,255,255,0.34) 100%);
-    -webkit-backdrop-filter: blur(40px);
-    resize: horizontal;
+    -webkit-backdrop-filter: blur(80px);
     z-index: 0;
 
 }
@@ -259,3 +254,12 @@ button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
     visibility: hidden;
 }
 
+
+@media (max-width: 950px)
+{
+    .card
+    {
+        width: 100%;
+        height: 100%;
+    }
+}
