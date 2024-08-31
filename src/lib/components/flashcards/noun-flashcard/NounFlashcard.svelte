@@ -3,7 +3,7 @@
 <!--TODO: Create loading and error card, create question element for different types of cards-->
 
 <!--Default state-->
-<div class="card">
+<div class="card glass-card shadow">
     <div class="content-frost"></div>
     <div class="card-content">
         <div class="question">
@@ -18,16 +18,15 @@
                 <button id="hint-tooltip-button"><span class="material-symbols-outlined">help</span></button>
                 <div class="hint-tooltip">{flashcard.Hint}</div>
             </div>
-            <div class="card-prompt">{prompt}</div>
+            <div>{prompt}</div>
             <form class="cta">
                 <input class="answer-field" type="text" bind:value={givenAnswer} />
                 <div class="cta-buttons">
-                    <input id="answer" type="submit" on:click={ () => {SubmitAnswer(givenAnswer) } }/>
-                    <button id="skip" on:click={SkipCard}>Skip</button>
+                    <input  id="answer" type="submit" class="bg-gradient" value={submit} on:click={ () => {SubmitAnswer(givenAnswer) } }/>
+                    <button class="bg-color-bad" id="skip" on:click={SkipCard}>{cancel}</button>
                 </div>
             </form>
         </div>
-
 
         {:else if _componentState === ComponentState.reviewing}
         <div class="card-review">
@@ -50,10 +49,12 @@
     //Default values that can be passed from parent
     export let flashcard: IFlashcard = new NounCard("Apple","[ˈæpəɫ]","Appel",NounCardType.Lemma);
     export let prompt:string = "This is my prompt?";
+    export let submit:string = "submit";
+    export let cancel:string = "skip";
 
     //Private: internal component variables
     let _componentState = ComponentState.ready;
-    let _componentStateElements = {feedbackState: "hidden", actionState: "visible", activeCard: flashcard, feedbackColour: "feedback-good"}
+    let _componentStateElements = {feedbackState: "hidden", actionState: "visible", activeCard: flashcard, feedbackColour: "bg-color-good"}
     const _dispatcher = createEventDispatcher();
 
     let givenAnswer: string = "";
@@ -62,7 +63,7 @@
     function SubmitAnswer(givenAnswer: string )
     {
         flashcard.SubmitAnswer(givenAnswer);
-        _componentStateElements.feedbackColour = flashcard.Result ? "feedback-good": "feedback-bad";
+        _componentStateElements.feedbackColour = flashcard.Result ? "bg-color-good": "bg-color-bad";
         _componentState = ComponentState.reviewing;
         _updateUIState();
     }

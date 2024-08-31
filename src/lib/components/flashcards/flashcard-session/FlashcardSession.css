@@ -7,19 +7,6 @@
     --card-border-color: rgba(255,255,255,0.7)
 }
 
-button, input[type="submit"], input[type="reset"] {
-    background: none;
-    color: darkgray;
-    border: none;
-    margin: 0 15px;
-    padding: 0;
-    font: inherit;
-}
-
-button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
-    color: white;
-    cursor: pointer;
-}
 
 .flashcard-session
 {
@@ -43,14 +30,8 @@ button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
 {
     position: absolute;
     bottom: 0;
-    background: linear-gradient(40deg, rgba(0,0,0,0.28) 0%, rgba(166,164,164,0.26) 45%, rgba(255,255,255,0.34) 100%);
-    /*border-bottom-left-radius: var(--rounded-corner-radius);*/
-    /*border-bottom-right-radius: var(--rounded-corner-radius);*/
     border-top-left-radius: var(--rounded-corner-radius);
     border-top-right-radius: var(--rounded-corner-radius);
-    border: 0px solid var( --card-border-color);
-    -webkit-backdrop-filter: blur(80px);
-    box-shadow: 5px 0px 15px black ;
     width: 80%;
     height: 40px;
     align-self: center;
@@ -107,7 +88,6 @@ button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
 .progress
 {
     margin-left:0.5%;
-    background: linear-gradient(90deg, rgba(97, 4, 97, 0.91), rgba(78, 35, 78, 0.91));
     height: 90%;
     max-width: 99%;
     border-radius: 25px;
@@ -123,29 +103,13 @@ button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
     height:100%;
 }
 
-#good-counter
+.session-counter
 {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #005300;
 }
 
-#bad-counter
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #7c0000;
-}
-
-#skip-counter
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #7c5500;
-}
 
 #language-ind
 {
@@ -154,7 +118,7 @@ button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
     text-overflow: ellipsis;
 }
 
-@media (max-width: 900px)
+@media(orientation:portrait)
 {
     .session-header
     {
@@ -186,7 +150,7 @@ button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
 
     }
 
-    @media(max-height: 600px)
+    @media(orientation: landscape)
     {
         .session-footer
         {

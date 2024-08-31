@@ -1,17 +1,17 @@
-<MenuBar menuItems = {menuItems}/>
-
-<script lang="ts">
-    import  MenuBar from '../lib/components/ui/menu-bar/MenuBar.svelte'
-
-    const menuItems =
-        [
-            {name: "Home", location: "/"},
-            {name: "Learn", location: "/learn"}
-
-    ]
+<script>
+import MenuBar from "$lib/components/ui/menu-bar/MenuBar.svelte";
 </script>
 
+<div class="background">
+</div>
+<div class="overlay"></div>
+<div class="content">
+    <slot />
+</div>
+
 <style>
+    @import '$lib/styles/global-styles.css' ;
+
     .background
     {
         position:absolute;
@@ -52,3 +52,4 @@
         height: 100vh;
     }
 </style>
+

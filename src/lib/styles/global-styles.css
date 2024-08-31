@@ -1,0 +1,69 @@
+:root
+{
+    /*general pallete*/
+    --primary: #F5E663;
+    --secondary: #20A4F3;
+    --tertiary: #10FFCB;
+    --quaternary: #F75590;
+    --quinary: #011627;
+
+    --accent: #007bff;
+    --good: #005300;
+    --bad: #7c0000;
+    --neutral: #7c5500;
+
+    --text-color: #aaaaaa;
+
+    --gradient: linear-gradient(90deg, var(--tertiary) 0%,var(--primary) 100%);
+
+    /*glass card*/
+    --glass-gradient: linear-gradient(40deg, rgba(0,0,0,0.28) 0%, rgba(166,164,164,0.26) 45%, rgba(255,255,255,0.34) 100%);
+
+    /*buttons*/
+}
+
+:global(body){
+    margin:0;
+    padding:0;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+}
+
+h1
+{
+    color: var(--secondary);
+}
+/*Overall elements*/
+:global(button,input[type="submit"],input[type="reset"]:hover) {
+    background-color: transparent;
+    color: var(--text-color);
+    border: none;
+    margin: 0 15px;
+    padding: 0;
+    font: inherit;
+}
+
+:global(button:hover, input[type="submit"]:hover, input[type="reset"]:hover) {
+    color: white;
+    cursor: pointer;
+}
+:global(.glass-card)
+{
+    background: var(--glass-gradient);
+    -webkit-backdrop-filter: blur(80px);
+}
+
+
+:global(.color-good) {   color: var(--good); }
+:global(.bg-color-good){    background: var(--good);  }
+
+:global(.color-bad) {   color: var(--bad); }
+:global(.bg-color-bad) {    background: var(--bad); }
+
+:global(.color-neutral) {   color: var(--neutral);   }
+:global(.bg-color-neutral) {   background: var(--neutral); }
+
+:global(.bg-gradient)   { background: var(--gradient); }
+
+:global(.shadow)    {   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); }
+
